@@ -13,7 +13,7 @@ public class SalesPage {
         elements = new WebElements(driver);
     }
 
-//    private static By myProfileButton = By.xpath("//a[@id='topLoginLink']");
+//      private static By myProfileButton = By.xpath("//a[@id='topLoginLink']");
 
     public void open (){
 
@@ -21,7 +21,7 @@ public class SalesPage {
     }
 
     public void goToLoginPage(){
-//        driver.findElement(myProfileButton).click();
+//      driver.findElement(myProfileButton).click();
         elements.clickButton("SalesPage.loginButton");
     }
 }

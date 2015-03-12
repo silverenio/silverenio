@@ -37,11 +37,11 @@ public class LeftMenuTest {
 
         UserLoggedInPage loggedInPage = loginPage.loginToTheAccount("user4", "user4");
 
-                Assert.assertTrue(loggedInPage.isUserLoggedIn());
-//                if (loggedInPage.isUserLoggedIn())
-//                    System.out.println("<<< Login is SUCCESSFUL >>>");
-//                else
-//                 System.out.println("<<< Login FAILED >>>");
+            Assert.assertTrue(loggedInPage.isUserLoggedIn());
+//               if (loggedInPage.isUserLoggedIn())
+//                   System.out.println("<<< Login is SUCCESSFUL >>>");
+//               else
+//                   System.out.println("<<< Login FAILED >>>");
 
         UserHomePage userHomePage = new UserHomePage(driver);
 

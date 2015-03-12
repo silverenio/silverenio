@@ -1,8 +1,8 @@
 package libs;
 
-
-
 import org.openqa.selenium.By;
+import org.testng.Assert;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,9 +28,9 @@ public class ConfigData {                                                //new c
             p.load(cfg);
             cfg.close();
         } catch (FileNotFoundException e) {
-            System.out.println("File not found exception");
+            Assert.fail("File not found exception");
         } catch (IOException e) {
-            System.out.println("IO exception");
+            Assert.fail("IO exception");
         }
         // from a file in a file system. FileInputStream is meant for reading streams of raw bytes such as image data. For reading streams of characters, consider using FileReader.
         // Load Properties from input stream

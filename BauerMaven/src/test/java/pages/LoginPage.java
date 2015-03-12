@@ -1,7 +1,6 @@
 package pages;
 
 import libs.WebElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
@@ -14,9 +13,9 @@ public class LoginPage {
         this.driver=driver;
         elements = new WebElements(driver);
     }
-    private static By usernameInput = By.xpath("//input[@id='_username']");
-    private static By passwordInput = By.xpath("//input[@id='_password']");
-    private static By enterButton = By.xpath("//button[@class='super action arrow']");
+//    private static By usernameInput = By.xpath("//input[@id='_username']");
+//    private static By passwordInput = By.xpath("//input[@id='_password']");
+//    private static By enterButton = By.xpath("//button[@class='super action arrow']");
 
     public UserLoggedInPage loginToTheAccount(String username, String password){
 //        driver.findElement(emailInput).clear();
