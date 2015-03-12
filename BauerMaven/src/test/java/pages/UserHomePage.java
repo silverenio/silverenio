@@ -3,8 +3,10 @@ package pages;
 
 import junit.framework.Assert;
 import libs.WebElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -125,5 +127,9 @@ public class UserHomePage {
 //        else
 //            System.out.println(errorMsg);
         Assert.assertTrue(driver.getCurrentUrl().equals("https://bauer.exercise-staging.com/articles/step-1"));
+
+
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.xpath(""))).click().doubleClick().perform();
     }
 }

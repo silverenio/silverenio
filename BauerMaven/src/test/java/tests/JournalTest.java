@@ -40,7 +40,25 @@ public class JournalTest {
 //                 System.out.println("<<< Login FAILED >>>");
 
         JournalPage journalPage = new JournalPage(driver);
+        UserHomePage userHomePage = new UserHomePage(driver);
 
+        userHomePage.firstFlyOutCheck();
+        if (userHomePage.firstFlyOutCheck())
+            System.out.println("<<< 1st FlyOut is present >>>");
+        else
+            System.out.println("<<< 1st FlyOut is already ABSENT >>>");
+
+        userHomePage.secondFlyOutCheck();
+        if (userHomePage.secondFlyOutCheck())
+            System.out.println("<<< 2nd FlyOut is present >>>");
+        else
+            System.out.println("<<< 2nd FlyOut is already ABSENT >>>");
+
+        userHomePage.thirdFlyOutCheck();
+        if (userHomePage.thirdFlyOutCheck())
+            System.out.println("<<< 3rd FlyOut is present >>>");
+        else
+            System.out.println("<<< 3rd FlyOut is already ABSENT >>>");
 
         journalPage.openJournal();
 

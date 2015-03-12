@@ -1,7 +1,10 @@
 package pages;
 
 import libs.WebElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class EditProfilePage {
@@ -18,8 +21,20 @@ public class EditProfilePage {
 
     public void editProfile(){
 
+        WebElement element = driver.findElement(By.xpath("//li[@class='user sub']"));
+        WebElement element2 = driver.findElement(By.xpath("//a[@href='/account']"));
 
-        elements.clickLink("EditProfilePage.accountLink");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).moveToElement(element2).click().perform();
+
+        /*
+        or without actions:
+         */
+
+//        driver.findElement(By.xpath("//li[@class='user sub']")).click();
+//        driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/nav/ul/li[5]/ul/li[1]/a")).click();
+
+
         elements.clickLink("EditProfilePage.editProfileLink");
         elements.inputText("EditProfilePage.inputFirstName", "Antonio");
         elements.inputText("EditProfilePage.inputLastName","Banderas");
