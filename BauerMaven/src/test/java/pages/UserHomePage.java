@@ -6,7 +6,9 @@ import libs.WebElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +16,7 @@ public class UserHomePage {
 
     WebDriver driver;
     WebElements elements;
+    WebDriverWait waitForConditions;
 
     public UserHomePage(WebDriver driver) {
         this.driver=driver;
@@ -25,19 +28,26 @@ public class UserHomePage {
 
     public  boolean firstFlyOutCheck(){
         try {
+//            waitForConditions = new WebDriverWait(driver, 5);
+//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.firstNextButton")));
+            WebElement element = driver.findElement(By.xpath("UserHomePage.firstNextButton"));
+            Actions actions = new Actions(driver);
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-            elements.clickButton("UserHomePage.firstNextButton");
+            actions.moveToElement(element).click().perform();
             return true;
         } catch (NoSuchElementException exception){
             return false;
-
         }
     }
 
     public boolean secondFlyOutCheck(){
         try {
+//            waitForConditions = new WebDriverWait(driver, 5);
+//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.secondNextButton")));
+            WebElement element = driver.findElement(By.xpath("UserHomePage.secondNextButton"));
+            Actions actions = new Actions(driver);
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-            elements.clickButton("UserHomePage.secondNextButton");
+            actions.moveToElement(element).click().perform();
             return true;
         } catch (NoSuchElementException exception){
             return false;
@@ -46,8 +56,12 @@ public class UserHomePage {
 
     public boolean thirdFlyOutCheck(){
         try {
+//            waitForConditions = new WebDriverWait(driver, 5);
+//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.allDoneButton")));
+            WebElement element = driver.findElement(By.xpath("UserHomePage.secondNextButton"));
+            Actions actions = new Actions(driver);
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-            elements.clickButton("UserHomePage.allDoneButton");
+            actions.moveToElement(element).click().perform();
             return true;
         } catch (NoSuchElementException exception){
             return false;
@@ -127,9 +141,5 @@ public class UserHomePage {
 //        else
 //            System.out.println(errorMsg);
         Assert.assertTrue(driver.getCurrentUrl().equals("https://bauer.exercise-staging.com/articles/step-1"));
-
-
-        Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.xpath(""))).click().doubleClick().perform();
     }
 }

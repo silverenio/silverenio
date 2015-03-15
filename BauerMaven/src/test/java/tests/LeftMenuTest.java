@@ -23,7 +23,7 @@ public class LeftMenuTest {
         public void setUpBefore(){
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }
 
         @Test

@@ -10,9 +10,6 @@ import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Anton on 12-Mar-15.
- */
 public class EditProfileTest {
 
     WebDriver driver;
@@ -21,7 +18,7 @@ public class EditProfileTest {
     public void setUpBefore(){
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test

@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -11,8 +10,7 @@ import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class JournalTest {
-
+public class ChangeCurrentDayTest {
     WebDriver driver;
 
     @BeforeTest
@@ -39,7 +37,7 @@ public class JournalTest {
 //                else
 //                 System.out.println("<<< Login FAILED >>>");
 
-        JournalPage journalPage = new JournalPage(driver);
+        ProgramSettingsPage programSettingsPage = new ProgramSettingsPage(driver);
         UserHomePage userHomePage = new UserHomePage(driver);
 
         userHomePage.firstFlyOutCheck();
@@ -60,7 +58,8 @@ public class JournalTest {
         else
             System.out.println("<<< 3rd FlyOut is already ABSENT >>>");
 
-        journalPage.openJournal();
+
+        programSettingsPage.changeDayNumber();
 
 
         System.out.println("<<< THE TEST is FINISHED >>>");

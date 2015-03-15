@@ -2,6 +2,10 @@ package pages;
 
 import libs.WebElements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static libs.ConfigData.ui;
 
 /**
  * Created by Anton on 12-Mar-15.
@@ -10,6 +14,7 @@ public class JournalPage {
 
     WebDriver driver;
     WebElements elements;
+    WebDriverWait waitForConditions;
 
     public JournalPage(WebDriver driver) {
         this.driver=driver;
@@ -27,10 +32,14 @@ public class JournalPage {
             System.out.println(errorMsg);
 
         elements.clickButton("JournalPage.newButton");
-        elements.inputText("JournalPage.titleField","Title");
+        elements.inputText("JournalPage.titleField", "Title");
         elements.inputText("JournalPage.entryField","Entry");
         elements.inputText("JournalPage.videoField","https://www.youtube.com/watch?v=9bZkp7q19f0");
         elements.clickButton("JournalPage.publishButton");
+
+        waitForConditions = new WebDriverWait(driver, 15);
+        waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("JournalPage.commentField")));
+
         elements.inputText("JournalPage.commentField","comment");
         elements.clickButton("JournalPage.postComment");
 
