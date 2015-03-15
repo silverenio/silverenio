@@ -2,14 +2,16 @@ package pages;
 
 import libs.WebElements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by Anton on 12-Mar-15.
- */
+import static libs.ConfigData.ui;
+
 public class ProgressPage {
 
     WebDriver driver;
     WebElements elements;
+    WebDriverWait waitForConditions;
 
     public ProgressPage(WebDriver driver) {
         this.driver=driver;
@@ -37,10 +39,15 @@ public class ProgressPage {
 
     }
 
-
-
-
     public void trackWeight(){
+
+        waitForConditions = new WebDriverWait(driver, 3);
+        waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("ProgressPage.chart")));
+
+        elements.clickLink("ProgressPage.updateLink");
+
+        waitForConditions = new WebDriverWait(driver, 3);
+        waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("ProgressPage.inputField")));
 
         elements.inputText("ProgressPage.inputWeight", "190");
         elements.clickButton("ProgressPage.trackButton");

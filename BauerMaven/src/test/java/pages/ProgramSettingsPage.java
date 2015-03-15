@@ -24,12 +24,11 @@ public class ProgramSettingsPage {
     public void changeDayNumber(){
 
         WebElement element = driver.findElement(By.xpath("//li[@class='user sub']"));
-        WebElement element2 = driver.findElement(By.xpath("//a[@href='/account']"));
+        WebElement element2 = driver.findElement(By.xpath("//a[@href='/account/program']"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(element).moveToElement(element2).click().perform();
 
-        elements.clickLink("ProgramSettingsPage.programSettings");
         elements.inputText("ProgramSettingsPage.todayIsDayField","30");
         elements.clickButton("ProgramSettingsPage.updateDayButton");
         Alert alert = driver.switchTo().alert();
