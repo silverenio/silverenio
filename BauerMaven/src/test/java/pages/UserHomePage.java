@@ -26,7 +26,7 @@ public class UserHomePage {
     String errorMsg = "<<< FAILED, link is incorrect >>>";
 
 
-    public  boolean firstFlyOutCheck(){
+    public  boolean firstFlyOutCheck() {
         try {
 //            waitForConditions = new WebDriverWait(driver, 5);
 //            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.firstNextButton")));
@@ -35,11 +35,12 @@ public class UserHomePage {
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
             actions.moveToElement(element).click().perform();
             return true;
-        } catch (NoSuchElementException exception){
+        } catch (NoSuchElementException exception) {
             return false;
+        } finally {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
     }
-
     public boolean secondFlyOutCheck(){
         try {
 //            waitForConditions = new WebDriverWait(driver, 5);
@@ -52,9 +53,12 @@ public class UserHomePage {
         } catch (NoSuchElementException exception){
             return false;
         }
+        finally {
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        }
     }
 
-    public boolean thirdFlyOutCheck(){
+    public boolean thirdFlyOutCheck() {
         try {
 //            waitForConditions = new WebDriverWait(driver, 5);
 //            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.allDoneButton")));
@@ -63,11 +67,12 @@ public class UserHomePage {
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
             actions.moveToElement(element).click().perform();
             return true;
-        } catch (NoSuchElementException exception){
+        } catch (NoSuchElementException exception) {
             return false;
+        } finally {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
     }
-
 
     public void clickTabs () {
 

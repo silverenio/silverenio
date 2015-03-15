@@ -7,7 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static libs.ConfigData.ui;
 
 public class ProgramSettingsPage {
     WebDriver driver;
@@ -23,7 +26,7 @@ public class ProgramSettingsPage {
 
     public void changeDayNumber(){
 
-        WebElement element = driver.findElement(By.xpath("//li[@class='user sub']"));
+        WebElement element = driver.findElement(ui("EditProfilePage.accountLinkDropdown"));
         WebElement element2 = driver.findElement(By.xpath("//a[@href='/account/program']"));
 
         Actions actions = new Actions(driver);
@@ -31,9 +34,14 @@ public class ProgramSettingsPage {
 
         elements.inputText("ProgramSettingsPage.todayIsDayField","30");
         elements.clickButton("ProgramSettingsPage.updateDayButton");
+
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        elements.clickButton("ProgramSettingsPage.closeConfirmationMsg");
+
+        waitForConditions = new WebDriverWait(driver, 2);
+        waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("ProgramSettingsPage.closeConfirmationMsg")));
+
+        elements.clickLink("ProgramSettingsPage.closeConfirmationMsg");
         elements.clickTab("ProgramSettingsPage.home");
         elements.clickTab("LeftMenuPage.meals");
         elements.clickLink("ProgramSettingsPage.nextDay");

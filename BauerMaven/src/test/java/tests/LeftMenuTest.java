@@ -47,19 +47,19 @@ public class LeftMenuTest {
 
             userHomePage.firstFlyOutCheck();
                  if (userHomePage.firstFlyOutCheck())
-                     System.out.println("<<< 1st FlyOut is present >>>");
+                     System.out.println("<<< 1st FlyOut is PRESENT >>>");
                  else
                      System.out.println("<<< 1st FlyOut is already ABSENT >>>");
 
             userHomePage.secondFlyOutCheck();
                  if (userHomePage.secondFlyOutCheck())
-                     System.out.println("<<< 2nd FlyOut is present >>>");
+                     System.out.println("<<< 2nd FlyOut is PRESENT >>>");
                  else
                      System.out.println("<<< 2nd FlyOut is already ABSENT >>>");
 
             userHomePage.thirdFlyOutCheck();
                  if (userHomePage.thirdFlyOutCheck())
-                      System.out.println("<<< 3rd FlyOut is present >>>");
+                      System.out.println("<<< 3rd FlyOut is PRESENT >>>");
                  else
                       System.out.println("<<< 3rd FlyOut is already ABSENT >>>");
 

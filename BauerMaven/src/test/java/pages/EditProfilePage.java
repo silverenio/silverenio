@@ -1,10 +1,11 @@
 package pages;
 
 import libs.WebElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
+import static libs.ConfigData.ui;
 
 
 public class EditProfilePage {
@@ -21,8 +22,8 @@ public class EditProfilePage {
 
     public void editProfile(){
 
-        WebElement element = driver.findElement(By.xpath("//li[@class='user sub']"));
-        WebElement element2 = driver.findElement(By.xpath("//a[@href='/account']"));
+        WebElement element = driver.findElement(ui("EditProfilePage.accountLinkDropdown"));
+        WebElement element2 = driver.findElement(ui("EditProfilePage.accountLink"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(element).moveToElement(element2).click().perform();
@@ -52,5 +53,7 @@ public class EditProfilePage {
 
 
     }
+
+
 }
 
