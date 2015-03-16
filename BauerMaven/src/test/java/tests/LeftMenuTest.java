@@ -4,8 +4,8 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SalesPage;
@@ -19,11 +19,11 @@ public class LeftMenuTest {
 
     WebDriver driver;
 
-        @BeforeTest
+        @BeforeClass
         public void setUpBefore(){
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         @Test
@@ -46,23 +46,8 @@ public class LeftMenuTest {
         UserHomePage userHomePage = new UserHomePage(driver);
 
             userHomePage.firstFlyOutCheck();
-                 if (userHomePage.firstFlyOutCheck())
-                     System.out.println("<<< 1st FlyOut is PRESENT >>>");
-                 else
-                     System.out.println("<<< 1st FlyOut is already ABSENT >>>");
-
             userHomePage.secondFlyOutCheck();
-                 if (userHomePage.secondFlyOutCheck())
-                     System.out.println("<<< 2nd FlyOut is PRESENT >>>");
-                 else
-                     System.out.println("<<< 2nd FlyOut is already ABSENT >>>");
-
             userHomePage.thirdFlyOutCheck();
-                 if (userHomePage.thirdFlyOutCheck())
-                      System.out.println("<<< 3rd FlyOut is PRESENT >>>");
-                 else
-                      System.out.println("<<< 3rd FlyOut is already ABSENT >>>");
-
             userHomePage.clickTabs();
 
 
@@ -70,7 +55,7 @@ public class LeftMenuTest {
         System.out.println("<<< THE TEST is FINISHED >>>");
         }
 
-        @AfterTest
+        @AfterClass
         public void tearDown() {
             driver.close();
             driver.quit();

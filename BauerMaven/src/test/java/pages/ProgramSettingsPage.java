@@ -3,7 +3,6 @@ package pages;
 
 import libs.WebElements;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -27,7 +26,7 @@ public class ProgramSettingsPage {
     public void changeDayNumber(){
 
         WebElement element = driver.findElement(ui("EditProfilePage.accountLinkDropdown"));
-        WebElement element2 = driver.findElement(By.xpath("//a[@href='/account/program']"));
+        WebElement element2 = driver.findElement(ui("ProgramSettingsPage.programSettingsLink"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(element).moveToElement(element2).click().perform();
