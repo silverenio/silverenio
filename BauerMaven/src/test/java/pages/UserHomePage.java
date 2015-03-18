@@ -5,8 +5,7 @@ import junit.framework.Assert;
 import libs.WebElements;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
@@ -27,12 +26,16 @@ public class UserHomePage {
 //    String errorMsg = "<<< FAILED, link is incorrect >>>";
 
     public void firstFlyOutCheck() {
+
         try {
-//            waitForConditions = new WebDriverWait(driver, 5);
-//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.firstNextButton")));
-            WebElement element = driver.findElement(ui("UserHomePage.firstNextButton"));
-            Actions actions = new Actions(driver);
-            actions.moveToElement(element).click().perform();
+            waitForConditions = new WebDriverWait(driver, 5);
+            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.firstButton"))).click();
+
+
+
+//            WebElement element = driver.findElement(ui("UserHomePage.firstButton"));
+//            Actions actions = new Actions(driver);
+//            actions.moveToElement(element).click().perform();
 
             System.out.println("<<< 1st FlyOut is PRESENT >>>");
         } catch (NoSuchElementException exception) {
@@ -43,16 +46,16 @@ public class UserHomePage {
     }
 
     public void secondFlyOutCheck() {
+
         try {
-//            waitForConditions = new WebDriverWait(driver, 5);
-//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.secondNextButton")));
-////            WebElement element = driver.findElement(ui("UserHomePage.secondNextButton"));
+            waitForConditions = new WebDriverWait(driver, 5);
+            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.secondButton"))).click();
+
+
+
+//            WebElement element = driver.findElement(ui("UserHomePage.secondButton"));
 //            Actions actions = new Actions(driver);
-//            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 //            actions.moveToElement(element).click().perform();
-            WebElement element = driver.findElement(ui("UserHomePage.secondNextButton"));
-            Actions actions = new Actions(driver);
-            actions.moveToElement(element).click().perform();
 
             System.out.println("<<< 2nd FlyOut is PRESENT >>>");
         } catch (NoSuchElementException exception) {
@@ -63,16 +66,16 @@ public class UserHomePage {
     }
 
     public void thirdFlyOutCheck() {
+
         try {
-//            waitForConditions = new WebDriverWait(driver, 5);
-//            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.allDoneButton")));
-//            WebElement element = driver.findElement(ui("UserHomePage.allDoneButton"));
+            waitForConditions = new WebDriverWait(driver, 5);
+            waitForConditions.until(ExpectedConditions.visibilityOfElementLocated(ui("UserHomePage.thirdButton"))).click();
+
+
+
+//            WebElement element = driver.findElement(ui("UserHomePage.thirdButton"));
 //            Actions actions = new Actions(driver);
-//            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 //            actions.moveToElement(element).click().perform();
-            WebElement element = driver.findElement(ui("UserHomePage.allDoneButton"));
-            Actions actions = new Actions(driver);
-            actions.moveToElement(element).click().perform();
 
             System.out.println("<<< 3rd FlyOut is PRESENT >>>");
         } catch (NoSuchElementException exception) {
