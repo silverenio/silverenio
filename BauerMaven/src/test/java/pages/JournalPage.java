@@ -1,6 +1,7 @@
 package pages;
 
 import libs.WebElements;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,10 +16,12 @@ public class JournalPage {
     WebDriver driver;
     WebElements elements;
     WebDriverWait waitForConditions;
+    Logger logger;
 
     public JournalPage(WebDriver driver) {
         this.driver=driver;
         elements = new WebElements(driver);
+        logger = Logger.getLogger(JournalPage.class);
     }
 
     String errorMsg = "<<< FAILED, link is incorrect >>>";
@@ -27,9 +30,11 @@ public class JournalPage {
 
         elements.clickTab("LeftMenuPage.journal");
         if (driver.getCurrentUrl().equals("https://bauer.exercise-staging.com/myjournal/user4"))
-            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+//            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+            logger.info("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
         else
-            System.out.println(errorMsg);
+//            System.out.println(errorMsg);
+            logger.info(errorMsg);
 
         elements.clickButton("JournalPage.newButton");
         elements.inputText("JournalPage.titleField", "Title");

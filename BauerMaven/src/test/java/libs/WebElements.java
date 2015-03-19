@@ -1,5 +1,6 @@
 package libs;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +14,13 @@ import static libs.ConfigData.ui;
  * This class implements methods to work with default web-elements
  **/
 public class WebElements {
+
     private WebDriver driver;
+    Logger logger;
 
     public WebElements(WebDriver driver) {
         this.driver = driver;
+        logger = Logger.getLogger(WebElements.class);
     }
 
     /*
@@ -27,7 +31,8 @@ public class WebElements {
         inputField = driver.findElement(ui(fieldLocator));
         inputField.clear();
         inputField.sendKeys(text);
-        System.out.println("<" + text + ">" + " inputted into field with locator <" + fieldLocator + ">.");
+//        System.out.println("<" + text + ">" + " inputted into field with locator <" + fieldLocator + ">.");
+        logger.info("<" + text + ">" + " inputted into field with locator <" + fieldLocator + ">.");
         //driver.findElement(By.xpath(fieldLocator)).clear();
         //driver.findElement(By.xpath(fieldLocator)).sendKeys(text);
     }
@@ -39,7 +44,8 @@ public class WebElements {
         WebElement button;
         button = driver.findElement(ui(buttonLocator));
         button.click();
-        System.out.println("Button with locator <" + buttonLocator + "> was clicked.");
+//        System.out.println("Button with locator <" + buttonLocator + "> was clicked.");
+        logger.info("Button with locator <" + buttonLocator + "> was clicked.");
     }
 
     /*
@@ -49,7 +55,8 @@ public class WebElements {
         WebElement tab;
         tab = driver.findElement(ui(tabLocator));
         tab.click();
-        System.out.println("Tab with locator <" + tabLocator + "> was clicked.");
+//        System.out.println("Tab with locator <" + tabLocator + "> was clicked.");
+        logger.info("Tab with locator <" + tabLocator + "> was clicked.");
     }
 
 
@@ -60,7 +67,8 @@ public class WebElements {
         WebElement link;
         link = driver.findElement(ui(linkText));
         link.click();
-        System.out.println("Link with locator <" + linkText + "> was clicked.");
+//        System.out.println("Link with locator <" + linkText + "> was clicked.");
+        logger.info("Link with locator <" + linkText + "> was clicked.");
     }
 
     /*
@@ -72,15 +80,19 @@ public class WebElements {
         boolean currentState;
         currentState = checkBox.isSelected();
         if (currentState && checkBoxState) {
-            System.out.println("Checkbox is already selected.");
+//            System.out.println("Checkbox is already selected.");
+            logger.info("Checkbox is already selected.");
         } else if (!currentState && checkBoxState) {
             checkBox.click();
-            System.out.println("Checkbox has been selected.");
+//            System.out.println("Checkbox has been selected.");
+            logger.info("Checkbox has been selected.");
         } else if (!currentState && !checkBoxState) {
-            System.out.println("CheckBox isn't selected.");
+//            System.out.println("CheckBox isn't selected.");
+            logger.info("CheckBox isn't selected.");
         } else if (currentState && !checkBoxState) {
             checkBox.click();
-            System.out.println("CheckBox has been unselected.");
+//            System.out.println("CheckBox has been unselected.");
+            logger.info("CheckBox has been unselected.");
         }
     }
 
@@ -91,7 +103,8 @@ public class WebElements {
         WebElement inputField;
         inputField = driver.findElement(ui(fieldLocator));
         inputField.clear();
-        System.out.println("Field with locator <" + fieldLocator + "> has been successfully cleared.");
+//        System.out.println("Field with locator <" + fieldLocator + "> has been successfully cleared.");
+        logger.info("Field with locator <" + fieldLocator + "> has been successfully cleared.");
     }
 
     public void selectRadioButton(String radioButtonBlockLocator, boolean radioButtonState) {
@@ -110,7 +123,8 @@ public class WebElements {
 
         dropDownElement = driver.findElement(ui(dropDownElementLocator));
         dropDownElement.click();
-        System.out.println("Drop-down element with locator <" + dropDownElementLocator + "> has been successfully chosen.");
+//        System.out.println("Drop-down element with locator <" + dropDownElementLocator + "> has been successfully chosen.");
+        logger.info("Drop-down element with locator <" + dropDownElementLocator + "> has been successfully chosen.");
     }
 
 //    public boolean isElementPresent(By elementLocator){

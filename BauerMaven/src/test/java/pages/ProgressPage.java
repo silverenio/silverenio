@@ -1,6 +1,7 @@
 package pages;
 
 import libs.WebElements;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,10 +13,12 @@ public class ProgressPage {
     WebDriver driver;
     WebElements elements;
     WebDriverWait waitForConditions;
+    Logger logger;
 
     public ProgressPage(WebDriver driver) {
         this.driver=driver;
         elements = new WebElements(driver);
+        logger = Logger.getLogger(ProgressPage.class);
     }
 
     String errorMsg = "<<< FAILED, link is incorrect >>>";
@@ -23,15 +26,19 @@ public class ProgressPage {
     public void setTheGraph () {
         elements.clickTab("LeftMenuPage.progress");
         if (driver.getCurrentUrl().equals("https://bauer.exercise-staging.com/progress"))
-            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+//            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+            logger.info("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
         else
-            System.out.println(errorMsg);
+//            System.out.println(errorMsg);
+            logger.info(errorMsg);
 
         elements.clickLink("ProgressPage.editLink");
         if (driver.getCurrentUrl().equals("https://bauer.exercise-staging.com/account/tracking"))
-            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+//            System.out.println("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
+            logger.info("Link: "+driver.getCurrentUrl()+" has been successfully opened.");
         else
-            System.out.println(errorMsg);
+//            System.out.println(errorMsg);
+            logger.info(errorMsg);
 
         elements.selectCheckBox("ProgressPage.currentWeightCheckbox", true);
 

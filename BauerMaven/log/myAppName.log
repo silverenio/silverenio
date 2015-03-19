@@ -1,0 +1,18 @@
+2015-19-03 17:10:05   INFO [libs.WebElements] : Button with locator <SalesPage.loginButton> was clicked.
+2015-19-03 17:10:05   INFO [pages.SalesPage] : My Login button has been clicked
+2015-19-03 17:10:11   INFO [libs.WebElements] : <user4> inputted into field with locator <LoginPage.loginField>.
+2015-19-03 17:10:13   INFO [libs.WebElements] : <user4> inputted into field with locator <LoginPage.passField>.
+2015-19-03 17:10:22   INFO [libs.WebElements] : Button with locator <LoginPage.loginButton> was clicked.
+2015-19-03 17:10:33   INFO [pages.UserHomePage] : <<< 1st FlyOut is already ABSENT >>>
+2015-19-03 17:10:43   INFO [pages.UserHomePage] : <<< 2nd FlyOut is already ABSENT >>>
+2015-19-03 17:10:54   INFO [pages.UserHomePage] : <<< 3rd FlyOut is already ABSENT >>>
+2015-19-03 17:10:55   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.home> was clicked.
+2015-19-03 17:11:01   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.meals> was clicked.
+2015-19-03 17:11:07   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.schedule> was clicked.
+2015-19-03 17:11:13   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.shoppingList> was clicked.
+2015-19-03 17:11:20   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.journal> was clicked.
+2015-19-03 17:11:25   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.calorieLog> was clicked.
+2015-19-03 17:11:34   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.progress> was clicked.
+2015-19-03 17:11:40   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.mealPlanner> was clicked.
+2015-19-03 17:11:45   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.albums> was clicked.
+2015-19-03 17:11:51   INFO [libs.WebElements] : Tab with locator <LeftMenuPage.articles> was clicked.
