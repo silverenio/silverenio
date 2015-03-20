@@ -35,7 +35,6 @@ public class EditProfilePage {
 //        driver.findElement(By.xpath("//li[@class='user sub']")).click();
 //        driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/nav/ul/li[5]/ul/li[1]/a")).click();
 
-
         elements.clickLink("EditProfilePage.editProfileLink");
         elements.inputText("EditProfilePage.inputFirstName", "Antonio");
         elements.inputText("EditProfilePage.inputLastName","Banderas");
